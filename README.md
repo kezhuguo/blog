@@ -1,2 +1,0 @@
-# blog
-learning experience
