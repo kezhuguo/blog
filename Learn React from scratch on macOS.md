@@ -24,6 +24,11 @@ then run to verify installation
 ```sh
 command -v nvm
 ```
+install node and npm
+```sh
+nvm install node
+nvm install-latest-npm
+```
 
 Next, create the project by
 ```sh
@@ -32,8 +37,11 @@ cd my-app
 npm start
 ```
 
+Now one can see a default display at http://localhost:3000/
 
-
+## Step 2
+Read through "Learn React in 10 tweets" (at https://twitter.com/chrisachard/status/1175022111758442497)
+and an example (at https://twitter.com/chrisachard/status/1238491672851423234)
 
 
 
