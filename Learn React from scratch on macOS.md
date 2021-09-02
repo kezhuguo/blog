@@ -1,6 +1,6 @@
 # Learn React from scratch on macOS
 
-## Step 1   Setup
+## Step 1 - Setup
 
 Start by installing the version manager nvm for node.js
 
@@ -40,19 +40,12 @@ npm start
 Now one can see a default display at http://localhost:3000/
 
 
-## Step 2   Learn the basics
+## Step 2 - Learn the basics
 
 For some basic understandings, read through "Learn React in 10 tweets" (at https://twitter.com/chrisachard/status/1175022111758442497)
 and an example (at https://twitter.com/chrisachard/status/1238491672851423234)
 
 Then here's the practical tutorial to follow: https://reactjs.org/tutorial/tutorial.html
 
-
-
-
-```sh
-
-```
-
-
+And try an exercise: https://gist.github.com/cybersiddhu/0a9147faff7378a40507a9a9815c4a2d
 
