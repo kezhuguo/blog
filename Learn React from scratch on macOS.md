@@ -49,3 +49,6 @@ Then here's the practical tutorial to follow: https://reactjs.org/tutorial/tutor
 
 And try an exercise: https://gist.github.com/cybersiddhu/0a9147faff7378a40507a9a9815c4a2d
 
+
+## Other good references
+https://www.geeksforgeeks.org/reactjs-importing-exporting/
