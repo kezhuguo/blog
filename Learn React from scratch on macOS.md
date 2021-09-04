@@ -59,3 +59,5 @@ https://reactjs.org/docs/hooks-intro.html
 https://daveceddia.com/usestate-hook-examples/
 
 https://www.robinwieruch.de/react-remove-item-from-list
+
+https://www.freecodecamp.org/news/react-simple-intro-component-not-rendering/
