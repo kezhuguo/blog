@@ -63,6 +63,15 @@ TODO: continue to common installation
 ```sh
 ```
 
+## Backup
+go to https://shrinkwrap.readthedocs.io/en/latest/
+
+For visualization: https://3dconnexion.com/us/software/
+
+Nvidia-docker:
+https://developer.nvidia.com/blog/nvidia-docker-gpu-server-application-deployment-made-easy/
+https://github.com/NVIDIA/nvidia-docker#quick-start
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
 
 
 
