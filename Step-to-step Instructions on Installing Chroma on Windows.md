@@ -1,63 +1,64 @@
-# Learn React from scratch on macOS
+# Step-to-step Instructions on Installing Chroma on Windows
 
-## Step 1 - Setup
+## Step 1 - Preparation & Set Up GPU
 
-Start by installing the version manager nvm for node.js
+Need a machine with an NVIDIA GPU
+Install Python, Docker Desktop, VSCode
+Download Chroma (https://github.com/BenLand100/chroma) and follow the instructions to run the image (using chroma3:nvidia)
 
-(Following https://github.com/nvm-sh/nvm#installing-and-updating and https://create-react-app.dev/docs/getting-started)
+In Windows -> settings, go to Windows insider and get Windows 11.
+Then follow https://docs.docker.com/desktop/windows/wsl/
+(Here I'm using Ubuntu 20.04)
 
-run in kernel:
+If get "Error: only 0 Devices available, 1 requested. Exiting." when running
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+docker run --rm -it --gpus=all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
-then I had to manually add the source lines to the profile file
+Reboot
+
+
+## Step 2 - Install Chroma
+
+(Go to chroma-master -> doc -> source -> install)
+(Here's the instruction for Ubuntu 20.04 in particular:)
+
+Install system packages:
 ```sh
-open .bash_profile
-```
-in the opened file, add
-```sh
-# manually added for nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-```
-then run to verify installation
-```sh
-command -v nvm
-```
-install node and npm
-```sh
-nvm install node
-nvm install-latest-npm
+sudo apt-get install python3-pygame python3-matplotlib python3-virtualenv build-essential xorg-dev python3-dev libglu1-mesa-dev  freeglut3-dev uuid-dev liblapack-dev mercurial git subversion libatlas-base-dev libbz2-dev
 ```
 
-Next, cd to the desired directory and create the project by
+CUDA Toolkit and Driver:
 ```sh
-npx create-react-app my-app
-cd my-app
-npm start
+sudo service gdm3 stop
+wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run
+sudo sh cuda_11.5.0_495.29.05_linux.run
+
+sudo service gdm3 start
 ```
 
-Now one can see a default display at http://localhost:3000/
+TODO: install nvidia driver...(sudo apt install nvidia-driver-495)
 
 
-## Step 2 - Learn the basics
+Open $HOME
+```sh
+sudo apt install xdg-utils
+xdg-open .
+```
+In .profile, add
+```sh
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
+```
+check in kernel
+```sh
+echo $PATH
+```
 
-For some basic understandings, read through "Learn React in 10 tweets" (at https://twitter.com/chrisachard/status/1175022111758442497)
-and an example (at https://twitter.com/chrisachard/status/1238491672851423234)
+TODO: continue to common installation
 
-Then here's the practical tutorial to follow: https://reactjs.org/tutorial/tutorial.html
-
-And try an exercise: https://gist.github.com/cybersiddhu/0a9147faff7378a40507a9a9815c4a2d
+```sh
+```
 
 
-## Other good references
-https://www.geeksforgeeks.org/reactjs-importing-exporting/
 
 
-https://reactjs.org/docs/hooks-intro.html
-
-https://daveceddia.com/usestate-hook-examples/
-
-https://www.robinwieruch.de/react-remove-item-from-list
-
-https://www.freecodecamp.org/news/react-simple-intro-component-not-rendering/
