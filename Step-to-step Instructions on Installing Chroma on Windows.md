@@ -27,17 +27,21 @@ Install system packages:
 sudo apt-get install python3-pygame python3-matplotlib python3-virtualenv build-essential xorg-dev python3-dev libglu1-mesa-dev  freeglut3-dev uuid-dev liblapack-dev mercurial git subversion libatlas-base-dev libbz2-dev
 ```
 
-CUDA Toolkit and Driver:
+CUDA Toolkit and Driver (version 11.5):
 ```sh
 sudo service gdm3 stop
 wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run
 sudo sh cuda_11.5.0_495.29.05_linux.run
-
+sudo apt install nvidia-driver-495
+```
+Check NVIDIA driver with 
+```sh
+nvidia-smi
+```
+Then
+```sh
 sudo service gdm3 start
 ```
-
-TODO: install nvidia driver...(sudo apt install nvidia-driver-495)
-
 
 Open $HOME
 ```sh
@@ -46,8 +50,8 @@ xdg-open .
 ```
 In .profile, add
 ```sh
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-11.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64/:$LD_LIBRARY_PATH
 ```
 check in kernel
 ```sh
