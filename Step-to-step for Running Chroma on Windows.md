@@ -37,11 +37,11 @@ docker run --name nvidia -it --gpus=all benland100/chroma3:nvidia
 Next time, one can start the container by
 ```sh
 docker start nvidia
-``
+```
 and can stop running by
 ```sh
 docker stop nvidia
-``
+```
 
 Then run the file by
 ```sh
